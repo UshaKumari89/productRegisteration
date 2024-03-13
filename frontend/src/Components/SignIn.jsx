@@ -36,7 +36,7 @@ const SignUp = () => {
         return;
       }
   
-      const response = await axios.post("http://localhost:8000/api/createuser", {
+      const response = await axios.post("https://productregisteration.onrender.com/api/createuser", {
         name,
         surname,
         email,

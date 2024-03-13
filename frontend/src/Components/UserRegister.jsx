@@ -108,7 +108,7 @@ const UserRegister = () => {
 
       console.log('Sending request to check email:', email);
 
-      const response = await axios.post('http://localhost:8000/api/checkEmail', { email });
+      const response = await axios.post('https://productregisteration.onrender.com/api/checkEmail', { email });
 
       console.log('Response:', response);
 
