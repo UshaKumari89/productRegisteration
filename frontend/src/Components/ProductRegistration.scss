@@ -1,0 +1,118 @@
+.product-registration {
+
+  
+    section {
+     padding: 1rem;
+      
+      h1{
+        font-size: 26px;
+        margin-left: 1rem;
+        font-family: 'GibsonRegular', sans-serif;
+      
+      }
+      h3{
+        font-size: 24px;
+        margin-left: 1.5rem;
+        font-family: 'GibsonRegular', sans-serif;
+      
+      }
+      
+      p {
+        line-height: 1.5;
+        margin-left: 1.5rem;
+        font-family: 'GibsonLight', sans-serif;
+   
+        
+      }
+      
+      ul {
+        list-style-type: disc;
+       
+       
+
+        
+        li {
+          font-size: 18px;
+          line-height: 1.5;
+          font-family: 'GibsonLight', sans-serif;
+         
+    
+        }
+      }
+    }
+  }
+
+ 
+  
+  .product-info-container{
+    display: flex;
+    align-items: center;
+
+  }
+  .product-info-container img{
+    height: 22rem;
+    width: 22rem;
+    margin-top: -2rem;
+  }
+.product-detail{
+  font-family: 'Gibsonlight', sans-serif;
+}
+.product-detail h3{
+  color: #000;
+  font-family: 'Gibson Regular', sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 36.4px */
+  letter-spacing: 0.6px;
+
+}
+.product-detail strong{
+color:#9A9898;
+font-family: 'Gibson Regular', sans-serif;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 14.4px */
+letter-spacing: 1px;
+}
+.product-detail small{
+ 
+font-family: 'Gibson Regular', sans-serif;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; 
+letter-spacing: 0.4px;
+color: #413F3E;
+
+}
+
+  // .button{
+  //   color: #333;
+  //   cursor: pointer;
+  //   align-items: center;
+  //   border-radius: 8px;
+  //   padding: 12px 24px;
+  //   border: 1px solid #413f3e;
+  //   background-color:#fff;
+  //   height: 40px;
+  //   font-family: 'Gibsonlight', sans-serif;
+  //   width: auto;
+  //   line-height: 16px;
+  //   font-size: 16px;
+  // }
+    
+  
+
+  @media screen and (max-width: 640px) {
+      .product-registration {
+        margin-top: -3rem;
+          
+     
+    }
+      .product-info-container{
+       flex-direction: column;
+    
+      }
+  }

@@ -1,0 +1,51 @@
+// UserRegister.scss
+
+.signup-login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: bold;
+  font-family: 'GibsonLight', sans-serif;
+  margin: 5px 0 0 5px;
+  font-size: .8rem;
+}
+
+.input {
+  width: 20rem;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  font-family: 'GibsonLight', sans-serif;
+  font-size: 14px;
+  line-height: 19.2px;
+  letter-spacing: .4px;
+}
+
+.input:focus {
+  outline: none;
+}
+.butn{
+  margin-top: 2rem;
+}
+.checkbox-container{
+  margin-left: -3rem;
+}
+}

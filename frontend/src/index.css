@@ -1,0 +1,33 @@
+
+
+
+@font-face {
+  font-family: 'GibsonRegular';
+  src: url('./Fonts/Canada\ Type\ -\ Gibson-Bold.ttf' ) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GibsonBold';
+  src: url('./Fonts/Canada\ Type\ -\ Gibson-Light.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SemiBoldRegular';
+  src: url('./Fonts/Canada\ Type\ -\ Gibson-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GibsonLight';
+  src: url('./Fonts/Canada\ Type\ -\ Gibson-SemiBold.ttf') format('truetype');
+  font-weight: lighter;
+  font-style: normal;
+}
+h1, h2, h3, h4, p, button{
+  font-family: 'GibsonLight', sans-serif; 
+}  
