@@ -43,7 +43,7 @@ const UserRegister = ({ productInfo }) => {
   
       //console.log('Sending request to check email:', email); // Log the email here
   
-      const response = await axios.post('https://productregisteration.onrender.com/api/checkEmail', { email });
+      const response = await axios.post('https://product-registeration-unw8.vercel.app/api/checkEmail', { email });
   
       //console.log('Response:', response);
   
