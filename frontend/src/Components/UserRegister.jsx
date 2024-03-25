@@ -43,7 +43,7 @@ const UserRegister = ({ productInfo }) => {
   
       //console.log('Sending request to check email:', email); // Log the email here
   
-      const response = await axios.post('https://productregisteration.onrender.com/api/checkEmail', { email });
+      const response = await axios.post('http://localhost:8000/api/checkEmail', { email });
   
       //console.log('Response:', response);
   

@@ -49,7 +49,7 @@ const SignUp = ({ productInfo }) => {
       console.log("Email in state:", email); // Log the email from state
       console.log("Name in state:", name); // Log the name from state
 
-      const response = await axios.post("https://productregisteration.onrender.com/api/createuser", {
+      const response = await axios.post("http://localhost:8000/api/createuser", {
         name,
         surname,
         email,
