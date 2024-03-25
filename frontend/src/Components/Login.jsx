@@ -30,7 +30,7 @@ const LogIn = ({productInfo }) => {
 
       //console.log('Logging in with email:', email);
 
-      const response = await axios.post("http://localhost:8000/api/login", { email, password, productInfo,});
+      const response = await axios.post("https://productregisteration.onrender.com/api/login", { email, password, productInfo,});
 
       if (response.data.success) {
         const { email, name, registrationDate } = response.data

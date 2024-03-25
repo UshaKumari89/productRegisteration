@@ -21,7 +21,9 @@ function App() {
   useEffect(() => {
     const fetchProductInfo = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/products');
+        const response = await axios.get('https://productregisteration.onrender.com/api/products');
+
+        //const response = await axios.get('http://localhost:8000/api/products');
         const data = response.data;
         if (data.success && data.products.length > 0) {
           setProductInfo(data.products[0]);
