@@ -1,10 +1,12 @@
+
+// export default SignUp;
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import "./UserRegister.scss";
 import Button from "./Button";
 
-const SignUp = () => {
+const SignUp = ({ productInfo }) => {
   const navigate = useNavigate();
 
   const [name, setName] = useState("");
@@ -20,13 +22,21 @@ const SignUp = () => {
     setTermsChecked(!termsChecked);
   };
 
+
+  useEffect(() => {
+    //console.log('Product Info in signin:', productInfo);
+  }, [productInfo]);
+
+
   useEffect(() => {
     const { state } = location;
     if (state && state.email) {
       setEmail(state.email);
+      setName(state.name);
     }
+    //console.log("Email from UserRegister component:", state.email);
   }, [location]);
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -35,15 +45,21 @@ const SignUp = () => {
         window.alert("Please agree to the terms and conditions");
         return;
       }
-  
-      const response = await axios.post("https://productregisteration.onrender.com/api/createuser", {
+
+      console.log("Email in state:", email); // Log the email from state
+      console.log("Name in state:", name); // Log the name from state
+
+      const response = await axios.post("http://localhost:8000/api/createuser", {
         name,
         surname,
         email,
         password,
+        product: productInfo.name
       });
+
       if (response.data.success) {
-        navigate('/login', { state: { email: email } });
+        console.log("User created successfully.");
+        navigate('/login', { state: { email, name } });
       } else {
         setError("Failed to create user");
       }
@@ -53,6 +69,7 @@ const SignUp = () => {
     }
   };
 
+  
   return (
     <div className="signup-login-container">
       <h2>Become Domatician!</h2>
@@ -87,15 +104,17 @@ const SignUp = () => {
         </div>
         <div className="input-container">
           <section>
+      
             <input
-              type="email"
-              id="email"
-              placeholder="john@gmail.com"
-              className="input"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+  type="email"
+  id="email"
+  placeholder="john@gmail.com"
+  className="input"
+  defaultValue={email}  // Use defaultValue instead of value
+  onChange={(e) => setEmail(e.target.value)}
+  required
+  autoComplete="username"
+/>
             <span>*</span>
           </section>
           <label htmlFor="email">Email</label>
@@ -110,6 +129,7 @@ const SignUp = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
+              autoComplete="current-password"
             />
             <span>*</span>
           </section>

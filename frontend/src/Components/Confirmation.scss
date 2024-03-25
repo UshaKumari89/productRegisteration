@@ -27,5 +27,26 @@
       font-size: 18px;
       color: #333;
     }
-  }
+    .product-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      margin-bottom: 20px;
   
+      img {
+        width: 100px; /* Adjust as needed */
+        height: 100px; /* Adjust as needed */
+  
+      }
+  
+    }
+  
+    .buttons {
+      display: flex;
+      
+  
+      .butn {
+        margin: 0 10px;
+      }
+  }
+}

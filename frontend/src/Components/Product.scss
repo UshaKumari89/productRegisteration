@@ -1,0 +1,31 @@
+.product {
+    margin: 1rem auto; 
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .btn-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px; /* Add gap between buttons */
+  }
+  
+ 
+
+  .proof{
+    margin: 3rem;
+  }
+   .custom-button {
+    background-color: #838588;
+    padding: 1rem;
+    color: #fff;
+    border: 1px solid #838588;
+  }
+  /* Media query for responsiveness */
+  @media screen and (max-width: 768px) {
+
+  }
+  

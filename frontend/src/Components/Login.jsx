@@ -1,14 +1,13 @@
 
-// export default LogIn;
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import Button from "./Button";
 
-const LogIn = () => {
+const LogIn = ({productInfo }) => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("");  
   const [password, setPassword] = useState("");
   const [loggingIn, setLoggingIn] = useState(false);
 
@@ -18,7 +17,7 @@ const LogIn = () => {
       setEmail(state.email);
     }
   }, [location]);
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -29,15 +28,18 @@ const LogIn = () => {
 
       setLoggingIn(true);
 
-      console.log('Logging in with email:', email);
+      //console.log('Logging in with email:', email);
 
-      const response = await axios.post("https://productregisteration.onrender.com/api/login", { email, password });
-
-      console.log('Login response:', response);
+      const response = await axios.post("http://localhost:8000/api/login", { email, password, productInfo,});
 
       if (response.data.success) {
-        navigate("/confirmation");
-      } else {
+        const { email, name, registrationDate } = response.data
+        navigate("/confirmation", { state: { email, name, registrationDate } });
+        //console.log("Navigating to confirmation with name:", name);
+       //console.log("Navigating to confirmation with email :", email);
+     // console.log("login with date :", registrationDate);
+      }
+       else {
         alert(response.data.message);
       }
     } catch (error) {
@@ -72,6 +74,7 @@ const LogIn = () => {
               value={email}
               onChange={handleEmailChange}
               required
+              autoComplete="username"
             />
             <span>*</span>
           </section>
@@ -87,6 +90,7 @@ const LogIn = () => {
               value={password}
               onChange={handlePasswordChange}
               required
+              autoComplete="current-password"
             />
             <span>*</span>
           </section>
@@ -100,15 +104,14 @@ const LogIn = () => {
           disabled={loggingIn}
           loggingIn={loggingIn}
         />
-        {loggingIn && (
+        {/* {loggingIn && (
           <div className="loading-icon">
             <i className="fa fa-spinner fa-spin"></i> 
           </div>
-        )}
+        )} */}
       </form>
     </div>
   );
-  
 };
 
 export default LogIn;

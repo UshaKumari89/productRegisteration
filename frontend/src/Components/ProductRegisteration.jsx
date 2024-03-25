@@ -1,16 +1,12 @@
-import React from 'react';
-import './ProductRegistration.scss'; // Import your SCSS file for styling
-import productImage from "../images/jugg.png"
+import React, { useEffect } from 'react';
+import './ProductRegistration.scss'; 
 
-const ProductRegistrationPage = () => {
-  const productInfo = {
-    "name":"Hydration Water Faucet",
-    "model": "HYDWF",
-    "sku": "9600050794",
-    "pnc": "987654321",
-    "serialNumber": "987456321",
+const ProductRegistrationPage = ({ productInfo }) => {
 
-  };
+  useEffect(() => {
+    // console.log("Product Info in PRODUCT REGISTEARTION:", productInfo);
+  }, [productInfo]);
+
 
   return (
     <div className="product-registration">
@@ -42,65 +38,36 @@ const ProductRegistrationPage = () => {
       </section>
 
       <section className="product-info-container">
-   
-          {/* Add image of the product on the left side */}
-          <div className="product-image">
-            {/* Include your product image here */}
-            <img src={productImage} alt="Product" />
-          </div>
+        {/* Add image of the product on the left side */}
+        <div className="product-image">
+          {/* Include your product image here */}
+          {productInfo && <img src={productInfo.img} alt="Product" />}
+        </div>
 
-          {/* Display product information on the right side */}
-        
-            <section className='product-detail'>
-            
-            <h3>{productInfo.name}</h3> 
-
-            <p>
-              <strong>Model:</strong> <small>{productInfo.model}</small>
-            </p>
-            <p>
-              <strong>SKU:</strong> <small>{productInfo.sku}</small>
-            </p>
-            <p>
-              <strong>PNC:</strong> <small>{productInfo.pnc}</small>
-            </p>
-            <p>
-              <strong>Serial Number:</strong> <small>{productInfo.serialNumber}</small>
-            </p>
-            </section>
-        
-     
+        {/* Display product information on the right side */}
+        <section className='product-detail'>
+          {productInfo && (
+            <>
+              <h3>{productInfo.name}</h3> 
+              <p>
+                <strong>Model:</strong> <small>{productInfo.model}</small>
+              </p>
+              <p>
+                <strong>SKU:</strong> <small>{productInfo.sku}</small>
+              </p>
+              <p>
+                <strong>PNC:</strong> <small>{productInfo.pnc}</small>
+              </p>
+              <p>
+                <strong>Serial Number:</strong> <small>{productInfo.serialNumber}</small>
+              </p>
+            </>
+          )}
+        </section>
+         
       </section>
     </div>
   );
 };
 
 export default ProductRegistrationPage;
-
-
-// const sendDataToServer = async () => {
-//   const productInfo = {
-//     name: 'Hydration Water Faucet',
-//     model: 'HYDWF',
-//     sku: '9600050794',
-//     pnc: '987654321',
-//     serialNumber: '987456321',
-//   };
-
-//   try {
-//     const response = await fetch('/api/products', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify(productInfo),
-//     });
-
-//     const data = await response.json();
-//     console.log(data); // Log the response from the server
-//   } catch (error) {
-//     console.error('Error:', error);
-//   }
-// };
-
-// sendDataToServer();
