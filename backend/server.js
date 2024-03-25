@@ -22,7 +22,7 @@ app.use(express.json());
 // Add your CORS middleware
 app.use((req, res, next) => {
   // Change the origin to match your frontend application's URL
-  res.setHeader('Access-Control-Allow-Origin', 'product-registeration-8m6drug6t-ushas-projects-d69436a1.vercel.app');
+  res.setHeader('Access-Control-Allow-Origin', '*');
   // Other CORS headers if needed
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
