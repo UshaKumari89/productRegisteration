@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors'); 
 const productRouter = require('./Routers/createProduct');
 
+app.use(cors());
 // Parse JSON request bodies
 app.use(express.json());
 
