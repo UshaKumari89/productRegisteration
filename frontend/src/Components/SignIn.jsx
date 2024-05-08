@@ -48,8 +48,8 @@ const SignUp = ({ productInfo }) => {
 
       console.log("Email in state:", email); // Log the email from state
       console.log("Name in state:", name); // Log the name from state
-      //const response = await axios.post("http://localhost:8000/api/createuser", {
-      const response = await axios.post("https://productregisteration.onrender.com/api/createuser", {
+    const response = await axios.post("http://localhost:8000/api/createuser", {
+      //const response = await axios.post("https://productregisteration.onrender.com/api/createuser", {
         name,
         surname,
         email,
@@ -72,7 +72,7 @@ const SignUp = ({ productInfo }) => {
   
   return (
     <div className="signup-login-container">
-      <h2>Become Domatician!</h2>
+      <h2>Become Dometician!</h2>
       <form onSubmit={handleSubmit}>
         <div className="input-container">
           <section>

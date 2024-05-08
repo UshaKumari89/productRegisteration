@@ -3,26 +3,14 @@ const app = express();
 const cors = require('cors'); 
 const productRouter = require('./Routers/createProduct');
 
-app.use(cors());
+//app.use(cors());
 // Parse JSON request bodies
 app.use(express.json());
 
 // Add your CORS middleware
-// app.use((req, res, next) => {
-//   //res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-//   res.setHeader('Access-Control-Allow-Origin', 'https://ushas-projects-d69436a1.vercel.app');
-//   // Other CORS headers if needed
-//   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-//   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-//   // Allow cookies to be sent from the client
-//   res.setHeader('Access-Control-Allow-Credentials', true);
-
-//   next();
-// });
-// Add your CORS middleware
 app.use((req, res, next) => {
-  // Change the origin to match your frontend application's URL
-  res.setHeader('Access-Control-Allow-Origin', 'https://product-registeration-eight.vercel.app');
+res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3001');
+ // res.setHeader('Access-Control-Allow-Origin', 'https://ushas-projects-d69436a1.vercel.app');
   // Other CORS headers if needed
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
@@ -31,6 +19,17 @@ app.use((req, res, next) => {
 
   next();
 });
+// app.use((req, res, next) => {
+//   // Change the origin to match your frontend application's URL
+//   res.setHeader('Access-Control-Allow-Origin', 'https://product-registeration-eight.vercel.app');
+//   // Other CORS headers if needed
+//   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+//   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+//   // Allow cookies to be sent from the client
+//   res.setHeader('Access-Control-Allow-Credentials', true);
+
+//   next();
+// });
 
 // Import the function for MongoDB connection from database.js
 const { mongoDbConnection } = require('./database');

@@ -63,11 +63,23 @@ const Product = () => {
       <h2>{productName || productNameFromState}</h2>
 
       {/* Example buttons */}
-      <section className='btn-section'>
+      {/* <section className='btn-section'>
         <Button label="Manual" className="custom-button" href="https://epi.dometic.com/externalassets/10-1016-101602-101602002_9600050795_86826.pdf?ref=1566983353&_gl=1*j2sdvg*_ga*MTE4MDcxMDc5NS4xNzAyNjI3Njky*_ga_D2ZX4PDC4Q*MTcxMDc4OTAxMy4yNy4xLjE3MTA3ODkzMzcuNTYuMC4w" />
         <Button label="Specification" className="custom-button" href="https://www.dometic.com/sv-se/outdoor/lp/dometic-go/portabel-vattenkran" />
         <Button label="Get Help" className="custom-button" href="https://www.dometic.com/sv-se/support" />
-      </section>
+      </section> */}
+      <section className='btn-section'>
+  <a href="https://epi.dometic.com/externalassets/10-1016-101602-101602002_9600050795_86826.pdf?ref=1566983353&_gl=1*j2sdvg*_ga*MTE4MDcxMDc5NS4xNzAyNjI3Njky*_ga_D2ZX4PDC4Q*MTcxMDc4OTAxMy4yNy4xLjE3MTA3ODkzMzcuNTYuMC4w" target="_blank" rel="noopener noreferrer" >
+    <Button label="Manual" />
+  </a>
+  <a href="https://www.dometic.com/sv-se/outdoor/lp/dometic-go/portabel-vattenkran" target="_blank" rel="noopener noreferrer" >
+    <Button label="Specification" />
+  </a>
+  <a href="https://www.dometic.com/sv-se/support" target="_blank" rel="noopener noreferrer" >
+    <Button label="Get Help" />
+  </a>
+</section>
+
 
       {/* Proof and warranty section */}
       <section className='proof'>

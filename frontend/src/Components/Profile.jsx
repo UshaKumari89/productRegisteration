@@ -67,9 +67,9 @@ const Profile = ({ productInfo }) => {
             <div className='product-info '>
               <h5>Your Products:</h5> 
               <h6>
-              <a href={`/product/${productInfo.id}`}>
+           
               {productInfo.name}
-            </a>
+    
           </h6>
             </div>
           )}
