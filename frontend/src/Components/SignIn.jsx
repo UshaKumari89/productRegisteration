@@ -136,6 +136,7 @@ const SignUp = ({ productInfo }) => {
           <label htmlFor="password">Password</label>
         </div>
         <section>
+          
           <div className="checkbox-container">
             <input
               type="checkbox"
